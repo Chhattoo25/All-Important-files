@@ -1,0 +1,45 @@
+
+<script >
+
+
+let arr =  new jagga(1,2,3,4)
+  function jagga(){
+    this.length = arguments.length
+  Object.defineProperty(this,"length",{
+    value:0, //better than undefined
+    writable:true,
+    enumerable:false,
+  });
+  for(let i = 0;i<arguments.length;i++){
+    this[i]=arguments[i]
+
+    this.length = arguments.length
+  }
+}
+
+
+  jagga.prototype.ਪੁਸ਼= function(arg){
+      let index = this.length;
+    //   this.length = arguments.length;
+    this[index]=arg
+    this.length++;
+
+
+
+  }
+  jagga.prototype.ਹਟਾਓ=function(){
+      let index = this.length-1;
+      delete this[index]
+      this.length--
+  }
+  arr.ਪੁਸ਼(4)
+  arr.ਹਟਾਓ()
+  arr.ਹਟਾਓ()
+  arr.ਹਟਾਓ()
+  arr.ਹਟਾਓ()
+  arr.ਹਟਾਓ()
+
+  console.log(Object.values(arr))
+
+
+</script>
